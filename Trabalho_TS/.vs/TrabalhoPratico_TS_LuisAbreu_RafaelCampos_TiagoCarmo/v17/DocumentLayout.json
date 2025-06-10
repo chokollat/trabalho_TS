@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8AD806D9-DF28-49F3-8537-9FC7B690ED5C}|Consola_Server\\Consola_Server.csproj|c:\\users\\luisp\\documents\\luis github\\trabalho_ts\\trabalho_ts\\consola_server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AD806D9-DF28-49F3-8537-9FC7B690ED5C}|Consola_Server\\Consola_Server.csproj|solutionrelative:consola_server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\SQLQuery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SQLQuery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\SQLQuery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SQLQuery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\SQLQuery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SQLQuery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|ResultFrame"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,6 +27,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\Consola_Server\\Program.cs",
+              "RelativeDocumentMoniker": "Consola_Server\\Program.cs",
+              "ToolTip": "C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\Consola_Server\\Program.cs",
+              "RelativeToolTip": "Consola_Server\\Program.cs",
+              "ViewState": "AgIAAFcAAAAAAAAAAAAowGYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-10T19:36:44.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "SQLQuery1.sql ",
               "DocumentMoniker": "C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\SQLQuery1.sql",
               "RelativeDocumentMoniker": "SQLQuery1.sql",
