@@ -42,6 +42,7 @@
             label3 = new Label();
             label2 = new Label();
             btn_exit = new Button();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -93,12 +94,12 @@
             // 
             btn_login.BackColor = Color.FromArgb(162, 125, 93);
             btn_login.FlatStyle = FlatStyle.Flat;
-            btn_login.Font = new Font("Microsoft Sans Serif", 21.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_login.Location = new Point(64, 307);
+            btn_login.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_login.Location = new Point(102, 318);
             btn_login.Name = "btn_login";
-            btn_login.Size = new Size(235, 58);
+            btn_login.Size = new Size(129, 31);
             btn_login.TabIndex = 4;
-            btn_login.Text = "LOGIN";
+            btn_login.Text = "Log In";
             btn_login.UseVisualStyleBackColor = false;
             btn_login.Click += btn_login_Click;
             // 
@@ -185,15 +186,27 @@
             // 
             btn_exit.BackColor = Color.Transparent;
             btn_exit.FlatStyle = FlatStyle.Flat;
-            btn_exit.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btn_exit.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_exit.ForeColor = Color.FromArgb(162, 125, 93);
-            btn_exit.Location = new Point(103, 371);
+            btn_exit.Location = new Point(102, 393);
             btn_exit.Name = "btn_exit";
-            btn_exit.Size = new Size(129, 41);
+            btn_exit.Size = new Size(129, 31);
             btn_exit.TabIndex = 13;
             btn_exit.Text = "Exit";
             btn_exit.UseVisualStyleBackColor = false;
             btn_exit.Click += btn_exit_Click;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(162, 125, 93);
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.Location = new Point(102, 355);
+            button1.Name = "button1";
+            button1.Size = new Size(129, 31);
+            button1.TabIndex = 14;
+            button1.Text = "Register";
+            button1.UseVisualStyleBackColor = false;
             // 
             // TapSend
             // 
@@ -201,6 +214,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(btn_exit);
@@ -244,5 +258,6 @@
         private Label label2;
         private Panel panel2;
         private Button btn_exit;
+        private Button button1;
     }
 }

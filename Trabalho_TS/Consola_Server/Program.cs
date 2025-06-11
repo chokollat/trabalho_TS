@@ -91,7 +91,6 @@ namespace Server
                             ack = protocoloSI.Make(ProtocolSICmdType.ACK);
                             networkStream.Write(ack, 0, ack.Length);
 
-                            //RETORNAR A MENSAGEM AO CLIENTE
                             lock (Program.lockObj)
                             {
                                 /*foreach (var clientes in Program.clientes)
@@ -110,7 +109,15 @@ namespace Server
                             ack = protocoloSI.Make(ProtocolSICmdType.ACK);
                             networkStream.Write(ack, 0, ack.Length);
                             break;
-                       
+
+                        case ProtocolSICmdType.USER_OPTION_1:
+                            string dadosCifrados = protocoloSI.GetStringFromData();
+                            // AES decrypt ainda não está feito, mas deverá ser aqui
+                            string dadosDecifrados = DecifrarTexto(dadosCifrados);
+                            Console.WriteLine("Registo recebido do cliente " + clientID + ": " + dadosDecifrados);
+                            break;
+
+
                     }
                 }
             }
@@ -128,7 +135,27 @@ namespace Server
                     Console.WriteLine("Erro ao enviar para cliente " + clientID + ": " + ex.Message);
                 }
             }
+
+            private string DecifrarTexto(string textoCifrado)
+            {
+                byte[] textoBytes = Convert.FromBase64String(textoCifrado);
+                string textoDecifrado = "";
+
+                using (MemoryStream ms = new MemoryStream(textoBytes))
+                {
+                    using (CryptoStream cs = new CryptoStream(ms, aes.CreateDecryptor(), CryptoStreamMode.Read))
+                    {
+                        using (StreamReader sr = new StreamReader(cs, Encoding.UTF8))
+                        {
+                            textoDecifrado = sr.ReadToEnd();
+                        }
+                    }
+                }
+
+                return textoDecifrado;
+            }
+
         }
-        
+
     }
 }

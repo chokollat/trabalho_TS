@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "8b7GZQc+4o4=",
+  "dgSpecHash": "cpzOVLS56Ic=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\Consola_Server\\Consola_Server.csproj",
+  "projectFilePath": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\Consola_Server\\Consola_Server.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problema ao ler o arquivo de cache C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\Consola_Server\\obj\\project.nuget.cache: Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }
