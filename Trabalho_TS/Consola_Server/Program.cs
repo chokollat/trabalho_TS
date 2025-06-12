@@ -1,20 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.SqlClient;
-using System.IO;
-using System.Linq;
-using System.Net;
+﻿using System.Net;
 using System.Net.Sockets;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Security.Cryptography;
-using System.Security.Principal;
 using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using EI.SI;
+using Microsoft.Data.SqlClient;
 
-namespace Server
+
+namespace Consola_Server
 {
     class Program
     {
@@ -45,10 +37,10 @@ namespace Server
                     /*clientes.Add(clientHandler);*/
                 }
 
-
                 clientHandler.Handle();
             }
         }
+
         class ClientHandler
         {
             private TcpClient client;
@@ -70,8 +62,8 @@ namespace Server
             {
                 Thread thread = new Thread(threadHandler);
                 thread.Start();
-
             }
+
             private void threadHandler()
             {
                 NetworkStream networkStream = this.client.GetStream();
@@ -84,7 +76,7 @@ namespace Server
                     switch (protocoloSI.GetCmdType())
                     {
                         case ProtocolSICmdType.DATA:
-                            //ESCREVER MENSAGEM DO CLIENTE
+                            // ESCREVER MENSAGEM DO CLIENTE
                             string mensagemRecebida = protocoloSI.GetStringFromData();
                             Console.WriteLine("Client " + clientID + ": " + mensagemRecebida);
 
@@ -103,8 +95,9 @@ namespace Server
                             }
 
                             break;
-                        // CASO O CLIENTE ENVIO EOT (FIM DE TRANSMISSAO)
+
                         case ProtocolSICmdType.EOT:
+                            // CASO O CLIENTE ENVIO EOT (FIM DE TRANSMISSAO)
                             Console.WriteLine("Ending Thread from Client {0}", clientID);
                             ack = protocoloSI.Make(ProtocolSICmdType.ACK);
                             networkStream.Write(ack, 0, ack.Length);
@@ -115,12 +108,21 @@ namespace Server
                             // AES decrypt ainda não está feito, mas deverá ser aqui
                             string dadosDecifrados = DecifrarTexto(dadosCifrados);
                             Console.WriteLine("Registo recebido do cliente " + clientID + ": " + dadosDecifrados);
+
+                            // Dividir username e password
+                            string[] partes = dadosDecifrados.Split('+');
+                            if (partes.Length == 2)
+                            {
+                                string username = partes[0];
+                                string password = partes[1];
+                                GuardarNaBaseDeDados(username, password);
+                            }
+
                             break;
-
-
                     }
                 }
             }
+
             private void MandarMensagem(string mensagemenviada)
             {
                 try
@@ -155,7 +157,55 @@ namespace Server
                 return textoDecifrado;
             }
 
-        }
 
+
+            private void GuardarNaBaseDeDados(string username, string password)
+            {
+
+                // Gerar salt
+                byte[] salt = new byte[SALTSIZE];
+                using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
+                {
+                    rng.GetBytes(salt);
+                }
+
+                // Gerar hash com salt
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] passwordComSalt = passwordBytes.Concat(salt).ToArray();
+                byte[] hash;
+                using (SHA256 sha256 = SHA256.Create())
+                {
+                    hash = sha256.ComputeHash(passwordComSalt);
+                }
+
+                string saltBase64 = Convert.ToBase64String(salt);
+                string hashBase64 = Convert.ToBase64String(hash);
+
+                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\USER\DOCUMENTS\GIT\TRABALHO_TS\TRABALHO_TS\TRABALHOPRATICO_TS_LUISABREU_RAFAELCAMPOS_TIAGOCARMO\DB'S\Database1.mdf;Integrated Security=True";
+
+                try
+                {
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+                        string query = "INSERT INTO Utilizadores (Username, PasswordHash, Salt) VALUES (@username, @hash, @salt)";
+                        using (SqlCommand cmd = new SqlCommand(query, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@username", username);
+                            cmd.Parameters.AddWithValue("@hash", hashBase64);
+                            cmd.Parameters.AddWithValue("@salt", saltBase64);
+
+                            cmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    Console.WriteLine("Registo inserido com sucesso na base de dados.");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao guardar na base de dados: " + ex.Message);
+                }
+            }
+        }
     }
 }
