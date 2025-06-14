@@ -4,6 +4,11 @@ using System.Security.Cryptography;
 using System.Text;
 using EI.SI;
 using Microsoft.Data.SqlClient;
+using EI.SI;
+using Microsoft.Data.SqlClient;
+
+
+
 
 
 namespace Consola_Server
@@ -13,7 +18,7 @@ namespace Consola_Server
         private const int PORT = 10000;
         private string publickey;
         private static int clientes_counter = 0;
-        /*public static List<ClientHandler> clientes = new List<ClientHandler>();*/
+        public static List<ClientHandler> clientes = new List<ClientHandler>();
         public static readonly object lockObj = new object();
 
         static void Main(string[] args)
@@ -34,14 +39,14 @@ namespace Consola_Server
 
                 lock (lockObj)
                 {
-                    /*clientes.Add(clientHandler);*/
+                    clientes.Add(clientHandler);
                 }
 
                 clientHandler.Handle();
             }
         }
 
-        class ClientHandler
+        public class ClientHandler
         {
             private TcpClient client;
             private int clientID;
@@ -56,6 +61,8 @@ namespace Consola_Server
                 this.client = client;
                 this.clientID = clientID;
                 this.aes = new AesCryptoServiceProvider();
+                this.aes.Key = Encoding.UTF8.GetBytes("1234567890123456"); 
+                this.aes.IV = Encoding.UTF8.GetBytes("6543210987654321");  
             }
 
             public void Handle()
@@ -68,60 +75,94 @@ namespace Consola_Server
             {
                 NetworkStream networkStream = this.client.GetStream();
                 ProtocolSI protocoloSI = new ProtocolSI();
+                bool clienteAutenticado = false;  // <- Novo: só manda mensagens se logado
 
                 while (protocoloSI.GetCmdType() != ProtocolSICmdType.EOT)
                 {
+                    byte[] buffer = new byte[1024];
                     int bytesRead = networkStream.Read(protocoloSI.Buffer, 0, protocoloSI.Buffer.Length);
+                    
+
                     byte[] ack;
+
                     switch (protocoloSI.GetCmdType())
                     {
                         case ProtocolSICmdType.DATA:
-                            // ESCREVER MENSAGEM DO CLIENTE
+                            if (!clienteAutenticado)
+                            {
+                                MandarMensagem("ERRO: Você precisa estar autenticado para mandar mensagens.");
+                                break;
+                            }
+
+                            // Mensagem do cliente
                             string mensagemRecebida = protocoloSI.GetStringFromData();
                             Console.WriteLine("Client " + clientID + ": " + mensagemRecebida);
 
                             ack = protocoloSI.Make(ProtocolSICmdType.ACK);
                             networkStream.Write(ack, 0, ack.Length);
 
+                            // Reenviar a outros clientes
                             lock (Program.lockObj)
                             {
-                                /*foreach (var clientes in Program.clientes)
+                                foreach (var clientes in Program.clientes)
                                 {
                                     if (clientes != this)
                                     {
                                         clientes.MandarMensagem("Cliente " + clientID + ": " + mensagemRecebida);
                                     }
-                                }*/
+                                }
                             }
-
                             break;
 
-                        case ProtocolSICmdType.EOT:
-                            // CASO O CLIENTE ENVIO EOT (FIM DE TRANSMISSAO)
-                            Console.WriteLine("Ending Thread from Client {0}", clientID);
-                            ack = protocoloSI.Make(ProtocolSICmdType.ACK);
-                            networkStream.Write(ack, 0, ack.Length);
-                            break;
-
-                        case ProtocolSICmdType.USER_OPTION_1:
+                        case ProtocolSICmdType.USER_OPTION_1:  // Registro
                             string dadosCifrados = protocoloSI.GetStringFromData();
-                            // AES decrypt ainda não está feito, mas deverá ser aqui
                             string dadosDecifrados = DecifrarTexto(dadosCifrados);
                             Console.WriteLine("Registo recebido do cliente " + clientID + ": " + dadosDecifrados);
 
-                            // Dividir username e password
                             string[] partes = dadosDecifrados.Split('+');
                             if (partes.Length == 2)
                             {
                                 string username = partes[0];
                                 string password = partes[1];
                                 GuardarNaBaseDeDados(username, password);
+                                MandarMensagem("REGISTO_SUCESSO");
                             }
+                            break;
 
+                        case ProtocolSICmdType.USER_OPTION_2:  // Login
+                            string dadosLoginCifrados = protocoloSI.GetStringFromData();
+                            string dadosLogin = DecifrarTexto(dadosLoginCifrados);
+                            Console.WriteLine("Tentativa de login do cliente " + clientID + ": " + dadosLogin);
+
+                            string[] partesLogin = dadosLogin.Split('+');
+                            if (partesLogin.Length == 2)
+                            {
+                                string usernameLogin = partesLogin[0];
+                                string passwordLogin = partesLogin[1];
+
+                                if (VerificarCredenciais(usernameLogin, passwordLogin))
+                                {
+                                    clienteAutenticado = true;
+                                    Console.WriteLine("Login bem-sucedido do cliente " + clientID);
+                                    MandarMensagem("LOGIN_SUCESSO");
+                                }
+                                else
+                                {
+                                    Console.WriteLine("Login FALHOU do cliente " + clientID);
+                                    MandarMensagem("LOGIN_FALHOU");
+                                }
+                            }
+                            break;
+
+                        case ProtocolSICmdType.EOT:
+                            Console.WriteLine("Ending Thread from Client {0}", clientID);
+                            ack = protocoloSI.Make(ProtocolSICmdType.ACK);
+                            networkStream.Write(ack, 0, ack.Length);
                             break;
                     }
                 }
             }
+
 
             private void MandarMensagem(string mensagemenviada)
             {
@@ -161,7 +202,6 @@ namespace Consola_Server
 
             private void GuardarNaBaseDeDados(string username, string password)
             {
-
                 // Gerar salt
                 byte[] salt = new byte[SALTSIZE];
                 using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
@@ -181,7 +221,10 @@ namespace Consola_Server
                 string saltBase64 = Convert.ToBase64String(salt);
                 string hashBase64 = Convert.ToBase64String(hash);
 
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\USER\DOCUMENTS\GIT\TRABALHO_TS\TRABALHO_TS\TRABALHOPRATICO_TS_LUISABREU_RAFAELCAMPOS_TIAGOCARMO\DB'S\Database1.mdf;Integrated Security=True";
+                // string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\USER\DOCUMENTS\GIT\TRABALHO_TS\TRABALHO_TS\TRABALHOPRATICO_TS_LUISABREU_RAFAELCAMPOS_TIAGOCARMO\DB'S\Database1.mdf;Integrated Security=True";
+
+                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Luisp\Documents\luis github\trabalho_TS\Trabalho_TS\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\DB\Dbuser.mdf"";Integrated Security=True";
+
 
                 try
                 {
@@ -199,13 +242,58 @@ namespace Consola_Server
                         }
                     }
 
+
                     Console.WriteLine("Registo inserido com sucesso na base de dados.");
                 }
                 catch (Exception ex)
                 {
+
                     Console.WriteLine("Erro ao guardar na base de dados: " + ex.Message);
                 }
             }
+
+            private bool VerificarCredenciais(string username, string password)
+            {
+                try
+                {
+                    string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Luisp\Documents\luis github\trabalho_TS\Trabalho_TS\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\DB\Dbuser.mdf"";Integrated Security=True";
+
+                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    {
+                        connection.Open();
+                        string query = "SELECT PasswordHash, Salt FROM Utilizadores WHERE Username = @username";
+                        using (SqlCommand cmd = new SqlCommand(query, connection))
+                        {
+                            cmd.Parameters.AddWithValue("@username", username);
+                            using (SqlDataReader reader = cmd.ExecuteReader())
+                            {
+                                if (reader.Read())
+                                {
+                                    string storedHash = reader.GetString(0);
+                                    string storedSalt = reader.GetString(1);
+                                    byte[] saltBytes = Convert.FromBase64String(storedSalt);
+                                    byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                                    byte[] passwordComSalt = passwordBytes.Concat(saltBytes).ToArray();
+                                    byte[] hash;
+                                    using (SHA256 sha256 = SHA256.Create())
+                                    {
+                                        hash = sha256.ComputeHash(passwordComSalt);
+                                    }
+                                    string hashBase64 = Convert.ToBase64String(hash);
+                                    return hashBase64 == storedHash;
+                                }
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Erro ao verificar login: " + ex.Message);
+                }
+
+                return false;
+            }
+
         }
     }
 }

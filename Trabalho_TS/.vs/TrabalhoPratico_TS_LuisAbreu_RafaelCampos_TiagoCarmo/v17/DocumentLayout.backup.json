@@ -7,8 +7,9 @@
       "RelativeMoniker": "D:0:0:{8AD806D9-DF28-49F3-8537-9FC7B690ED5C}|Consola_Server\\Consola_Server.csproj|solutionrelative:consola_server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|c:\\users\\user\\documents\\git\\trabalho_ts\\trabalho_ts\\trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|solutionrelative:trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+<<<<<<< Updated upstream
+      "AbsoluteMoniker": "D:0:0:{8AD806D9-DF28-49F3-8537-9FC7B690ED5C}|Consola_Server\\Consola_Server.csproj|c:\\users\\user\\documents\\git\\trabalho_ts\\trabalho_ts\\consola_server\\consola_server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{8AD806D9-DF28-49F3-8537-9FC7B690ED5C}|Consola_Server\\Consola_Server.csproj|solutionrelative:consola_server\\consola_server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|c:\\users\\user\\documents\\git\\trabalho_ts\\trabalho_ts\\trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\form3.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -25,6 +26,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|solutionrelative:trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+=======
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\SQLQuery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:SQLQuery1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|"
+>>>>>>> Stashed changes
     }
   ],
   "DocumentGroupContainers": [
@@ -47,14 +52,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Program.cs",
-              "RelativeDocumentMoniker": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Program.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Program.cs",
-              "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-12T16:18:17.01Z",
+<<<<<<< Updated upstream
+              "Title": "Consola_Server",
+              "DocumentMoniker": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\Consola_Server\\Consola_Server.csproj",
+              "RelativeDocumentMoniker": "Consola_Server\\Consola_Server.csproj",
+              "ToolTip": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\Consola_Server\\Consola_Server.csproj",
+              "RelativeToolTip": "Consola_Server\\Consola_Server.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-12T16:12:07.3Z",
               "EditorCaption": ""
             },
             {
@@ -65,7 +70,7 @@
               "RelativeDocumentMoniker": "Consola_Server\\Program.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\Consola_Server\\Program.cs",
               "RelativeToolTip": "Consola_Server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAYAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-11T13:56:03.203Z",
               "EditorCaption": ""
@@ -92,8 +97,7 @@
               "ToolTip": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form3.cs [Projeto]",
               "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form3.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T13:08:13.472Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2025-06-11T13:08:13.472Z"
             },
             {
               "$type": "Document",
@@ -104,8 +108,7 @@
               "ToolTip": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.cs [Projeto]",
               "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T12:50:20.177Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2025-06-11T12:50:20.177Z"
             },
             {
               "$type": "Document",
@@ -116,8 +119,16 @@
               "ToolTip": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form1.cs [Projeto]",
               "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form1.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-11T12:50:14.944Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2025-06-11T12:50:14.944Z"
+=======
+              "Title": "SQLQuery1.sql",
+              "DocumentMoniker": "C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\SQLQuery1.sql",
+              "RelativeDocumentMoniker": "SQLQuery1.sql",
+              "ToolTip": "C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\SQLQuery1.sql",
+              "RelativeToolTip": "SQLQuery1.sql",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-06-08T13:09:50.025Z"
+>>>>>>> Stashed changes
             }
           ]
         }

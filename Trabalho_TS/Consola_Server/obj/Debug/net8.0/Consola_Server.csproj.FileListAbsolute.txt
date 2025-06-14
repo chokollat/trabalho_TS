@@ -13,6 +13,7 @@ C:\Users\Luisp\Documents\luis github\trabalho_TS\Trabalho_TS\Consola_Server\obj\
 C:\Users\Luisp\Documents\luis github\trabalho_TS\Trabalho_TS\Consola_Server\obj\Debug\net8.0\Consola_Server.pdb
 C:\Users\Luisp\Documents\luis github\trabalho_TS\Trabalho_TS\Consola_Server\obj\Debug\net8.0\Consola_Server.genruntimeconfig.cache
 C:\Users\Luisp\Documents\luis github\trabalho_TS\Trabalho_TS\Consola_Server\obj\Debug\net8.0\ref\Consola_Server.dll
+<<<<<<< Updated upstream
 C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\Consola_Server\bin\Debug\net8.0\Consola_Server.exe
 C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\Consola_Server\bin\Debug\net8.0\Consola_Server.deps.json
 C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\Consola_Server\bin\Debug\net8.0\Consola_Server.runtimeconfig.json
@@ -31,3 +32,6 @@ C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\Consola_Server\obj\Debug\net
 C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\Consola_Server\obj\Debug\net8.0\Consola_Server.pdb
 C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\Consola_Server\obj\Debug\net8.0\Consola_Server.genruntimeconfig.cache
 C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\Consola_Server\obj\Debug\net8.0\ref\Consola_Server.dll
+=======
+C:\Users\Luisp\Documents\luis github\trabalho_TS\Trabalho_TS\Consola_Server\obj\Debug\net8.0\Consola_Server.csproj.AssemblyReference.cache
+>>>>>>> Stashed changes
