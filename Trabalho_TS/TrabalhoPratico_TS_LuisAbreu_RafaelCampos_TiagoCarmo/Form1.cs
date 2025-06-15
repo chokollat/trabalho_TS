@@ -1,31 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
+using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Sockets;
-using EI.SI;    
+using EI.SI;
 using System.Security.Cryptography;
-using System.IO;
-
 
 namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
 {
     public partial class TapSend : Form
     {
+        private Aes aes = Aes.Create();
+        private const string AES_KEY = "1234567890123456";
+        private const string AES_IV = "6543210987654321";
 
         public TapSend()
         {
             InitializeComponent();
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
+            aes.Key = Encoding.UTF8.GetBytes(AES_KEY);
+            aes.IV = Encoding.UTF8.GetBytes(AES_IV);
         }
 
         private void btn_login_Click(object sender, EventArgs e)
@@ -37,16 +30,16 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
             {
                 try
                 {
-                    TcpClient client = new TcpClient("127.0.0.1", 10000); // muda IP/porta se for diferente
+                    TcpClient client = new TcpClient("127.0.0.1", 10000);
                     NetworkStream networkStream = client.GetStream();
                     ProtocolSI protocolSI = new ProtocolSI();
 
-                    // Enviar pedido de login
                     string dados = username + "+" + password;
-                    byte[] loginPacket = protocolSI.Make(ProtocolSICmdType.USER_OPTION_2, dados);
+                    string dadosCifrados = CifrarTexto(dados);
+
+                    byte[] loginPacket = protocolSI.Make(ProtocolSICmdType.USER_OPTION_2, dadosCifrados);
                     networkStream.Write(loginPacket, 0, loginPacket.Length);
 
-                    // Esperar resposta
                     int bytesRead = networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
                     ProtocolSICmdType resposta = protocolSI.GetCmdType();
 
@@ -82,23 +75,47 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
         {
             try
             {
-                // Cria e conecta o cliente TCP no IP e porta do servidor
+                // Cria e conecta o cliente TCP ao servidor
                 TcpClient client = new TcpClient("127.0.0.1", 10000);
                 NetworkStream stream = client.GetStream();
                 ProtocolSI protocolSI = new ProtocolSI();
                 Aes aes = Aes.Create();
 
-                // Cria o Form3 (registro) passando os objetos necessários
+                // Define chave e vetor IV iguais aos do servidor
+                aes.Key = Encoding.UTF8.GetBytes("1234567890123456");
+                aes.IV = Encoding.UTF8.GetBytes("6543210987654321");
+
+                // Abre o formulário de registo (Form3), passando os objetos necessários
                 Form3 formRegisto = new Form3(client, stream, protocolSI, aes);
                 formRegisto.Show();
 
-                // Opcional: esconder este form se quiser
+                // Opcional: esconder o formulário atual (Form1)
                 this.Hide();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro ao conectar ao servidor: " + ex.Message);
+                MessageBox.Show("Erro ao conectar ao servidor: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+
+        private string CifrarTexto(string texto)
+        {
+            byte[] textoBytes = Encoding.UTF8.GetBytes(texto);
+            byte[] textoCifrado;
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, aes.CreateEncryptor(), CryptoStreamMode.Write))
+                {
+                    cs.Write(textoBytes, 0, textoBytes.Length);
+                    cs.Close();
+                }
+                textoCifrado = ms.ToArray();
+            }
+
+            return Convert.ToBase64String(textoCifrado);
+        }
+
     }
 }

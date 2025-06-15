@@ -53,10 +53,9 @@
             // pictureBox1
             // 
             pictureBox1.Image = Properties.Resources._65672267_95286551;
-            pictureBox1.Location = new Point(427, -41);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Location = new Point(374, -31);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(593, 665);
+            pictureBox1.Size = new Size(519, 499);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -64,10 +63,9 @@
             // pictureBox2
             // 
             pictureBox2.Image = Properties.Resources.Adobe_Express___file1;
-            pictureBox2.Location = new Point(73, 16);
-            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.Location = new Point(64, 12);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(269, 107);
+            pictureBox2.Size = new Size(235, 80);
             pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
@@ -75,10 +73,9 @@
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.man1;
-            pictureBox3.Location = new Point(73, 272);
-            pictureBox3.Margin = new Padding(3, 4, 3, 4);
+            pictureBox3.Location = new Point(64, 204);
             pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(25, 28);
+            pictureBox3.Size = new Size(22, 21);
             pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 2;
             pictureBox3.TabStop = false;
@@ -86,10 +83,9 @@
             // pictureBox4
             // 
             pictureBox4.Image = Properties.Resources.padlock2;
-            pictureBox4.Location = new Point(73, 359);
-            pictureBox4.Margin = new Padding(3, 4, 3, 4);
+            pictureBox4.Location = new Point(64, 269);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(25, 28);
+            pictureBox4.Size = new Size(22, 21);
             pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
@@ -99,10 +95,9 @@
             btn_login.BackColor = Color.FromArgb(162, 125, 93);
             btn_login.FlatStyle = FlatStyle.Flat;
             btn_login.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_login.Location = new Point(117, 424);
-            btn_login.Margin = new Padding(3, 4, 3, 4);
+            btn_login.Location = new Point(102, 318);
             btn_login.Name = "btn_login";
-            btn_login.Size = new Size(147, 41);
+            btn_login.Size = new Size(129, 31);
             btn_login.TabIndex = 4;
             btn_login.Text = "Log In";
             btn_login.UseVisualStyleBackColor = false;
@@ -110,20 +105,18 @@
             // 
             // txtPassword
             // 
-            txtPassword.Location = new Point(105, 359);
-            txtPassword.Margin = new Padding(3, 4, 3, 4);
+            txtPassword.Location = new Point(92, 269);
             txtPassword.Multiline = true;
             txtPassword.Name = "txtPassword";
-            txtPassword.Size = new Size(199, 29);
+            txtPassword.Size = new Size(175, 23);
             txtPassword.TabIndex = 5;
             // 
             // txtUsername
             // 
-            txtUsername.Location = new Point(105, 269);
-            txtUsername.Margin = new Padding(3, 4, 3, 4);
+            txtUsername.Location = new Point(92, 202);
             txtUsername.Multiline = true;
             txtUsername.Name = "txtUsername";
-            txtUsername.Size = new Size(199, 29);
+            txtUsername.Size = new Size(175, 23);
             txtUsername.TabIndex = 6;
             // 
             // label1
@@ -131,7 +124,7 @@
             label1.AutoSize = true;
             label1.Location = new Point(0, 0);
             label1.Name = "label1";
-            label1.Size = new Size(50, 20);
+            label1.Size = new Size(38, 15);
             label1.TabIndex = 7;
             label1.Text = "label1";
             // 
@@ -141,9 +134,9 @@
             label_login.BackColor = Color.White;
             label_login.Font = new Font("Microsoft Sans Serif", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label_login.ForeColor = Color.FromArgb(162, 125, 93);
-            label_login.Location = new Point(149, 160);
+            label_login.Location = new Point(130, 120);
             label_login.Name = "label_login";
-            label_login.Size = new Size(123, 46);
+            label_login.Size = new Size(101, 37);
             label_login.TabIndex = 8;
             label_login.Text = "Login";
             // 
@@ -152,20 +145,18 @@
             panel1.BackColor = Color.Black;
             panel1.Controls.Add(panel2);
             panel1.ForeColor = Color.Black;
-            panel1.Location = new Point(73, 323);
-            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Location = new Point(64, 242);
             panel1.Name = "panel1";
-            panel1.Size = new Size(233, 1);
+            panel1.Size = new Size(204, 1);
             panel1.TabIndex = 9;
             // 
             // panel2
             // 
             panel2.BackColor = Color.Black;
             panel2.ForeColor = Color.Black;
-            panel2.Location = new Point(0, 81);
-            panel2.Margin = new Padding(3, 4, 3, 4);
+            panel2.Location = new Point(0, 61);
             panel2.Name = "panel2";
-            panel2.Size = new Size(233, 1);
+            panel2.Size = new Size(204, 1);
             panel2.TabIndex = 10;
             // 
             // label3
@@ -173,9 +164,9 @@
             label3.BackColor = Color.White;
             label3.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.FromArgb(162, 125, 93);
-            label3.Location = new Point(67, 239);
+            label3.Location = new Point(59, 179);
             label3.Name = "label3";
-            label3.Size = new Size(135, 27);
+            label3.Size = new Size(118, 20);
             label3.TabIndex = 11;
             label3.Text = "User Name";
             // 
@@ -184,9 +175,9 @@
             label2.BackColor = Color.White;
             label2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.FromArgb(162, 125, 93);
-            label2.Location = new Point(67, 328);
+            label2.Location = new Point(59, 246);
             label2.Name = "label2";
-            label2.Size = new Size(115, 27);
+            label2.Size = new Size(101, 20);
             label2.TabIndex = 12;
             label2.Text = "Password";
             // 
@@ -196,10 +187,9 @@
             btn_exit.FlatStyle = FlatStyle.Flat;
             btn_exit.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btn_exit.ForeColor = Color.FromArgb(162, 125, 93);
-            btn_exit.Location = new Point(117, 524);
-            btn_exit.Margin = new Padding(3, 4, 3, 4);
+            btn_exit.Location = new Point(102, 393);
             btn_exit.Name = "btn_exit";
-            btn_exit.Size = new Size(147, 41);
+            btn_exit.Size = new Size(129, 31);
             btn_exit.TabIndex = 13;
             btn_exit.Text = "Exit";
             btn_exit.UseVisualStyleBackColor = false;
@@ -210,10 +200,9 @@
             btn_registro.BackColor = Color.FromArgb(162, 125, 93);
             btn_registro.FlatStyle = FlatStyle.Flat;
             btn_registro.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_registro.Location = new Point(117, 473);
-            btn_registro.Margin = new Padding(3, 4, 3, 4);
+            btn_registro.Location = new Point(102, 355);
             btn_registro.Name = "btn_registro";
-            btn_registro.Size = new Size(147, 41);
+            btn_registro.Size = new Size(129, 31);
             btn_registro.TabIndex = 14;
             btn_registro.Text = "Register";
             btn_registro.UseVisualStyleBackColor = false;
@@ -221,10 +210,10 @@
             // 
             // TapSend
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(btn_registro);
             Controls.Add(label2);
             Controls.Add(label3);
@@ -241,10 +230,8 @@
             Controls.Add(pictureBox1);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "TapSend";
             Text = "Form1";
-            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
