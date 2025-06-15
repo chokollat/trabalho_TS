@@ -4,12 +4,6 @@ using System.Security.Cryptography;
 using System.Text;
 using EI.SI;
 using Microsoft.Data.SqlClient;
-using EI.SI;
-using Microsoft.Data.SqlClient;
-
-
-
-
 
 namespace Consola_Server
 {

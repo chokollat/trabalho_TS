@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Novo Perfil",
+    "Projects": [
+      {
+        "Path": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "Consola_Server\\Consola_Server.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]
