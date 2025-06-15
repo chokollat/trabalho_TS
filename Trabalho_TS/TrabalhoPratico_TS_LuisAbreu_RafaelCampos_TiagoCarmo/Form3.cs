@@ -94,5 +94,11 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
             // Codificar para Base64 para envio seguro via protocolo
             return Convert.ToBase64String(textoCifrado);
         }
+
+        private void btn_back_Click(object sender, EventArgs e)
+        {
+            Application.OpenForms["TapSend"]?.Show();
+            this.Close();
+        }
     }
 }
