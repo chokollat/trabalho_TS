@@ -13,15 +13,19 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
         private TcpClient client;
         private NetworkStream networkStream;
         private ProtocolSI protocolSI;
-        private Aes aes;
+        private Aes aes = Aes.Create();
 
+        public Form3()
+        {
+            InitializeComponent();
+        }
         public Form3(TcpClient client, NetworkStream stream, ProtocolSI proto, Aes aesObject)
         {
             InitializeComponent();
-            client = client;
-            networkStream = stream;
-            protocolSI = proto;
-            aes = aesObject;
+            this.client = client;
+            this.networkStream = stream;
+            this.protocolSI = proto;
+            this.aes = aesObject;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -43,7 +47,13 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
                 // Cifrar
                 string dadosCifrados = CifrarTexto(dados);
 
-                // Criar mensagem e enviar
+                
+                if (client == null || !client.Connected)
+                {
+                    MessageBox.Show("Client is not connected.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                
                 byte[] packet = protocolSI.Make(ProtocolSICmdType.USER_OPTION_1, dadosCifrados);
                 networkStream.Write(packet, 0, packet.Length);
 
