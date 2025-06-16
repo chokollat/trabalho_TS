@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj": {}
+    "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj": {
+    "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj",
         "projectName": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo",
-        "projectPath": "C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj",
-        "packagesPath": "C:\\Users\\Luisp\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Luisp\\Documents\\luis github\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Luisp\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -78,7 +78,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

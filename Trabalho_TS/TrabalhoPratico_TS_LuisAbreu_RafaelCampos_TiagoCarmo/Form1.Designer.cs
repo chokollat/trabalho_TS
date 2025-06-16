@@ -32,7 +32,7 @@
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
-            btn_login = new Button();
+            btnLogin = new Button();
             txtPassword = new TextBox();
             txtUsername = new TextBox();
             label1 = new Label();
@@ -42,7 +42,7 @@
             label3 = new Label();
             label2 = new Label();
             btn_exit = new Button();
-            btn_registro = new Button();
+            btnRegister = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -90,18 +90,18 @@
             pictureBox4.TabIndex = 3;
             pictureBox4.TabStop = false;
             // 
-            // btn_login
+            // btnLogin
             // 
-            btn_login.BackColor = Color.FromArgb(162, 125, 93);
-            btn_login.FlatStyle = FlatStyle.Flat;
-            btn_login.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_login.Location = new Point(102, 318);
-            btn_login.Name = "btn_login";
-            btn_login.Size = new Size(129, 31);
-            btn_login.TabIndex = 4;
-            btn_login.Text = "Log In";
-            btn_login.UseVisualStyleBackColor = false;
-            btn_login.Click += btn_login_Click;
+            btnLogin.BackColor = Color.FromArgb(162, 125, 93);
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnLogin.Location = new Point(102, 318);
+            btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(129, 31);
+            btnLogin.TabIndex = 4;
+            btnLogin.Text = "Log In";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click_1;
             // 
             // txtPassword
             // 
@@ -193,20 +193,19 @@
             btn_exit.TabIndex = 13;
             btn_exit.Text = "Exit";
             btn_exit.UseVisualStyleBackColor = false;
-            btn_exit.Click += btn_exit_Click;
             // 
-            // btn_registro
+            // btnRegister
             // 
-            btn_registro.BackColor = Color.FromArgb(162, 125, 93);
-            btn_registro.FlatStyle = FlatStyle.Flat;
-            btn_registro.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btn_registro.Location = new Point(102, 355);
-            btn_registro.Name = "btn_registro";
-            btn_registro.Size = new Size(129, 31);
-            btn_registro.TabIndex = 14;
-            btn_registro.Text = "Register";
-            btn_registro.UseVisualStyleBackColor = false;
-            btn_registro.Click += btn_registro_Click;
+            btnRegister.BackColor = Color.FromArgb(162, 125, 93);
+            btnRegister.FlatStyle = FlatStyle.Flat;
+            btnRegister.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRegister.Location = new Point(102, 355);
+            btnRegister.Name = "btnRegister";
+            btnRegister.Size = new Size(129, 31);
+            btnRegister.TabIndex = 14;
+            btnRegister.Text = "Register";
+            btnRegister.UseVisualStyleBackColor = false;
+            btnRegister.Click += btnRegister_Click_1;
             // 
             // TapSend
             // 
@@ -214,7 +213,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
-            Controls.Add(btn_registro);
+            Controls.Add(btnRegister);
             Controls.Add(label2);
             Controls.Add(label3);
             Controls.Add(btn_exit);
@@ -223,7 +222,7 @@
             Controls.Add(label1);
             Controls.Add(txtUsername);
             Controls.Add(txtPassword);
-            Controls.Add(btn_login);
+            Controls.Add(btnLogin);
             Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(pictureBox2);
@@ -247,7 +246,7 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
         private PictureBox pictureBox4;
-        private Button btn_login;
+        private Button btnLogin;
         private TextBox txtPassword;
         private TextBox txtUsername;
         private Label label1;
@@ -257,6 +256,6 @@
         private Label label2;
         private Panel panel2;
         private Button btn_exit;
-        private Button btn_registro;
+        private Button btnRegister;
     }
 }

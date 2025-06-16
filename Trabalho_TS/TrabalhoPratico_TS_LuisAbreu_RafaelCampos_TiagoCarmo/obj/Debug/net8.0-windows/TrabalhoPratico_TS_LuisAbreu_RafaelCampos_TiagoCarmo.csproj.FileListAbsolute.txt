@@ -183,4 +183,3 @@ C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\TrabalhoPratico_TS_LuisAbreu
 C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Data.SqlClient.dll
 C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
-C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\obj\Debug\net8.0-windows\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.Form3.resources

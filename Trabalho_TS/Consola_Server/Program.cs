@@ -74,8 +74,26 @@ namespace Consola_Server
                 while (protocoloSI.GetCmdType() != ProtocolSICmdType.EOT)
                 {
                     byte[] buffer = new byte[1024];
-                    int bytesRead = networkStream.Read(protocoloSI.Buffer, 0, protocoloSI.Buffer.Length);
-                    
+                    try
+                    {
+                        int bytesRead = networkStream.Read(protocoloSI.Buffer, 0, protocoloSI.Buffer.Length);
+                        if (bytesRead == 0)
+                        {
+                            Console.WriteLine($"Cliente {clientID} desconectado.");
+                            return; // Fecha a thread deste cliente
+                        }
+                    }
+                    catch (IOException ioEx)
+                    {
+                        Console.WriteLine($"[IO ERROR] Cliente {clientID} - {ioEx.Message}");
+                        return;
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine($"[ERRO GERAL] Cliente {clientID} - {ex.Message}");
+                        return;
+                    }
+
 
                     byte[] ack;
 
@@ -110,41 +128,35 @@ namespace Consola_Server
 
                         case ProtocolSICmdType.USER_OPTION_1:  // Registro
                             string dadosCifrados = protocoloSI.GetStringFromData();
-                            string dadosDecifrados = DecifrarTexto(dadosCifrados);
-                            Console.WriteLine("Registo recebido do cliente " + clientID + ": " + dadosDecifrados);
+                  
+                            Console.WriteLine("Registo recebido do cliente " + clientID + ": " + dadosCifrados);
 
-                            string[] partes = dadosDecifrados.Split('+');
-                            if (partes.Length == 2)
-                            {
-                                string username = partes[0];
-                                string password = partes[1];
-                                GuardarNaBaseDeDados(username, password);
-                                MandarMensagem("REGISTO_SUCESSO");
-                            }
+                            string[] partes = dadosCifrados.Split('+');
+                            string username = partes[0];
+                            string password = partes[1];
+                            byte[] salt = GenerateSalt(SALTSIZE);
+                            byte[] hash = GenerateSaltedHash(password, salt);
+                            Register(username, hash, salt);
                             break;
 
                         case ProtocolSICmdType.USER_OPTION_2:  // Login
                             string dadosLoginCifrados = protocoloSI.GetStringFromData();
-                            string dadosLogin = DecifrarTexto(dadosLoginCifrados);
-                            Console.WriteLine("Tentativa de login do cliente " + clientID + ": " + dadosLogin);
+                            Console.WriteLine("Tentativa de login do cliente " + clientID + ": " + dadosLoginCifrados);
 
-                            string[] partesLogin = dadosLogin.Split('+');
-                            if (partesLogin.Length == 2)
+                            string[] partesLogin = dadosLoginCifrados.Split('+');
+                            string usernameLogin = partesLogin[0];
+                            string passwordLogin = partesLogin[1];
+
+                            if (VerificarCredenciais(usernameLogin, passwordLogin))
                             {
-                                string usernameLogin = partesLogin[0];
-                                string passwordLogin = partesLogin[1];
-
-                                if (VerificarCredenciais(usernameLogin, passwordLogin))
-                                {
-                                    clienteAutenticado = true;
-                                    Console.WriteLine("Login bem-sucedido do cliente " + clientID);
-                                    MandarMensagem("LOGIN_SUCESSO");
-                                }
-                                else
-                                {
-                                    Console.WriteLine("Login FALHOU do cliente " + clientID);
-                                    MandarMensagem("LOGIN_FALHOU");
-                                }
+                                clienteAutenticado = true;
+                                Console.WriteLine("Login bem-sucedido do cliente " + clientID);
+                                MandarMensagem("logado");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Login FALHOU do cliente " + clientID);
+                                MandarMensagem("deslogado");
                             }
                             break;
 
@@ -152,7 +164,8 @@ namespace Consola_Server
                             Console.WriteLine("Ending Thread from Client {0}", clientID);
                             ack = protocoloSI.Make(ProtocolSICmdType.ACK);
                             networkStream.Write(ack, 0, ack.Length);
-                            break;
+                            client.Close(); 
+                            return;         
                     }
                 }
             }
@@ -194,99 +207,131 @@ namespace Consola_Server
 
 
 
-            private void GuardarNaBaseDeDados(string username, string password)
+            private void Register(string username, byte[] saltedPasswordHash, byte[] salt)
             {
-                // Gerar salt
-                byte[] salt = new byte[SALTSIZE];
-                using (RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider())
-                {
-                    rng.GetBytes(salt);
-                }
-
-                // Gerar hash com salt
-                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
-                byte[] passwordComSalt = passwordBytes.Concat(salt).ToArray();
-                byte[] hash;
-                using (SHA256 sha256 = SHA256.Create())
-                {
-                    hash = sha256.ComputeHash(passwordComSalt);
-                }
-
-                string saltBase64 = Convert.ToBase64String(salt);
-                string hashBase64 = Convert.ToBase64String(hash);
-
-                // string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\USERS\USER\DOCUMENTS\GIT\TRABALHO_TS\TRABALHO_TS\TRABALHOPRATICO_TS_LUISABREU_RAFAELCAMPOS_TIAGOCARMO\DB'S\Database1.mdf;Integrated Security=True";
-
-                string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Luisp\Documents\luis github\trabalho_TS\Trabalho_TS\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\DB\Dbuser.mdf"";Integrated Security=True";
-
-
+                SqlConnection conn = null;
                 try
                 {
-                    using (SqlConnection connection = new SqlConnection(connectionString))
-                    {
-                        connection.Open();
-                        string query = "INSERT INTO Utilizadores (Username, PasswordHash, Salt) VALUES (@username, @hash, @salt)";
-                        using (SqlCommand cmd = new SqlCommand(query, connection))
-                        {
-                            cmd.Parameters.AddWithValue("@username", username);
-                            cmd.Parameters.AddWithValue("@hash", hashBase64);
-                            cmd.Parameters.AddWithValue("@salt", saltBase64);
+                    conn = new SqlConnection();
+                    conn.ConnectionString = String.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\DB\Dbuser.mdf';Integrated Security=True");
+                    conn.Open();
 
-                            cmd.ExecuteNonQuery();
-                        }
+
+                    string checkUserSql = "SELECT COUNT(*) FROM Users WHERE Username = @username";
+                    SqlCommand checkCmd = new SqlCommand(checkUserSql, conn);
+                    checkCmd.Parameters.AddWithValue("@username", username);
+
+                    int userExists = (int)checkCmd.ExecuteScalar();
+                    if (userExists > 0)
+                    {
+                        Console.WriteLine("Utilizador já existe.");
+
+                        MandarMensagem("erro: user já existe");
+                        return;
                     }
 
+                    // Se não existe, insere
+                    string sql = "INSERT INTO Users (Username, SaltedPasswordHash, Salt) VALUES (@username,@saltedPasswordHash,@salt)";
+                    SqlCommand cmd = new SqlCommand(sql, conn);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@saltedPasswordHash", saltedPasswordHash);
+                    cmd.Parameters.AddWithValue("@salt", salt);
 
-                    Console.WriteLine("Registo inserido com sucesso na base de dados.");
+                    int lines = cmd.ExecuteNonQuery();
+                    conn.Close();
+
+                    if (lines == 0)
+                    {
+                        throw new Exception("Error while inserting user");
+                    }
+
+                    MandarMensagem("user inserido com sucesso");
+                    Console.WriteLine("Inserido"); 
                 }
-                catch (Exception ex)
+                catch (Exception e)
                 {
 
-                    Console.WriteLine("Erro ao guardar na base de dados: " + ex.Message);
+                    throw new Exception("Erro ao inserir utilizador: " + e.Message);
                 }
             }
 
             private bool VerificarCredenciais(string username, string password)
             {
+                SqlConnection conn = null;
                 try
                 {
-                    string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=""C:\Users\Luisp\Documents\luis github\trabalho_TS\Trabalho_TS\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\DB\Dbuser.mdf"";Integrated Security=True";
+                    // Configurar ligação à Base de Dados
+                    conn = new SqlConnection();
+                    conn.ConnectionString = String.Format(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename='C:\Users\User\Documents\GIT\trabalho_TS\Trabalho_TS\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\DB\Dbuser.mdf';Integrated Security=True");
 
-                    using (SqlConnection connection = new SqlConnection(connectionString))
+                    // Abrir ligação à Base de Dados
+                    conn.Open();
+
+                    // Declaração do comando SQL
+                    String sql = "SELECT * FROM Users WHERE Username = @username";
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.CommandText = sql;
+
+                    // Declaração dos parâmetros do comando SQL
+                    SqlParameter param = new SqlParameter("@username", username);
+
+                    // Introduzir valor ao parâmentro registado no comando SQL
+                    cmd.Parameters.Add(param);
+
+                    // Associar ligação à Base de Dados ao comando a ser executado
+                    cmd.Connection = conn;
+
+                    // Executar comando SQL
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    if (!reader.HasRows)
                     {
-                        connection.Open();
-                        string query = "SELECT PasswordHash, Salt FROM Utilizadores WHERE Username = @username";
-                        using (SqlCommand cmd = new SqlCommand(query, connection))
-                        {
-                            cmd.Parameters.AddWithValue("@username", username);
-                            using (SqlDataReader reader = cmd.ExecuteReader())
-                            {
-                                if (reader.Read())
-                                {
-                                    string storedHash = reader.GetString(0);
-                                    string storedSalt = reader.GetString(1);
-                                    byte[] saltBytes = Convert.FromBase64String(storedSalt);
-                                    byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
-                                    byte[] passwordComSalt = passwordBytes.Concat(saltBytes).ToArray();
-                                    byte[] hash;
-                                    using (SHA256 sha256 = SHA256.Create())
-                                    {
-                                        hash = sha256.ComputeHash(passwordComSalt);
-                                    }
-                                    string hashBase64 = Convert.ToBase64String(hash);
-                                    return hashBase64 == storedHash;
-                                }
-                            }
-                        }
+
+                        throw new Exception("Error while trying to access an user");
                     }
+
+                    // Ler resultado da pesquisa
+                    reader.Read();
+
+                    // Obter Hash (password + salt)
+                    byte[] saltedPasswordHashStored = (byte[])reader["SaltedPasswordHash"];
+
+                    // Obter salt
+                    byte[] saltStored = (byte[])reader["Salt"];
+
+                    conn.Close();
+
+                    //TODO: verificar se a password na base de dados 
+                    byte[] hash = GenerateSaltedHash(password, saltStored);
+
+                    return saltedPasswordHashStored.SequenceEqual(hash);
+
+                    throw new NotImplementedException();
                 }
-                catch (Exception ex)
+                catch (Exception e)
                 {
-                    Console.WriteLine("Erro ao verificar login: " + ex.Message);
+                    //MessageBox.Show("An error occurred: " + e.Message);
+                    return false;
                 }
 
-                return false;
             }
+
+            private static byte[] GenerateSalt(int size)
+            {
+                //Generate a cryptographic random number.
+                RNGCryptoServiceProvider rng = new RNGCryptoServiceProvider();
+                byte[] buff = new byte[size];
+                rng.GetBytes(buff);
+                return buff;
+            }
+            private static byte[] GenerateSaltedHash(string plainText, byte[] salt)
+            {
+                Rfc2898DeriveBytes rfc2898 = new Rfc2898DeriveBytes(plainText, salt, NUMBER_OF_ITERATIONS);
+                return rfc2898.GetBytes(32);
+            }
+
+
+
 
         }
     }
