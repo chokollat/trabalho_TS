@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using EI.SI;
 
+
+
 namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
 {
     public partial class TapSend : Form
@@ -60,45 +62,65 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
         }
 
         // Função para registrar usuário na base
-        
+
 
         // Evento do botão Registrar
-      
 
-        private void btnLogin_Click_1(object sender, EventArgs e)
-        {
-            string username = txtUsername.Text.Trim();
-            string password = txtPassword.Text;
-
-            byte[] packet = protocolSI.Make(ProtocolSICmdType.USER_OPTION_2, username +'+'+ password);
-            networkStream.Write(packet, 0, packet.Length);
-
-            networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
-            if (protocolSI.GetCmdType() == ProtocolSICmdType.DATA)
-            {
-                string ResultadoLogin = (protocolSI.GetStringFromData());
-                if (ResultadoLogin == "logado")
-                {
-                    MessageBox.Show("Logado Com Sucesso");
-       
-                }
-                else if (ResultadoLogin == "deslogado")
-                {
-                    MessageBox.Show("Logado sem Sucesso");
-                }
-            }
-
-        }
 
         private void btnRegister_Click_1(object sender, EventArgs e)
         {
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
 
-            byte[] packet = protocolSI.Make(ProtocolSICmdType.USER_OPTION_1, username+'+'+password);
+            byte[] packet = protocolSI.Make(ProtocolSICmdType.USER_OPTION_1, username + '+' + password);
             networkStream.Write(packet, 0, packet.Length);
 
         }
 
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+            string username = txtUsername.Text.Trim();
+            string password = txtPassword.Text;
+
+            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            {
+                MessageBox.Show("Preenche todos os campos!");
+                return;
+            }
+
+            try
+            {
+                TcpClient client = new TcpClient("127.0.0.1", 10000);
+                NetworkStream networkStream = client.GetStream();
+                ProtocolSI protocolSI = new ProtocolSI();
+
+                string dados = username + "+" + password;
+                string dadosCifrados = AESCrypto.Encrypt(dados); // Usa a classe AESCrypto.cs
+
+                byte[] loginPacket = protocolSI.Make(ProtocolSICmdType.USER_OPTION_2, dadosCifrados);
+                networkStream.Write(loginPacket, 0, loginPacket.Length);
+
+                int bytesRead = networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
+                ProtocolSICmdType resposta = protocolSI.GetCmdType();
+                string respostaServidor = protocolSI.GetStringFromData();
+
+                if (resposta == ProtocolSICmdType.DATA && respostaServidor == "logado")
+                {
+                    MessageBox.Show("Login bem-sucedido!");
+                    Form2 chatForm = new Form2(client, networkStream, username);
+                    chatForm.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("Credenciais inválidas.");
+                    client.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao comunicar com o servidor: " + ex.Message);
+            }
+        }
     }
 }

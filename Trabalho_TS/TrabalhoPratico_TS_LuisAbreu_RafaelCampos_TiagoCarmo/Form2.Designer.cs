@@ -33,10 +33,10 @@
             btn_back = new Button();
             colorDialog1 = new ColorDialog();
             btn_send = new Button();
-            textBox1 = new TextBox();
+            txtMensagem = new TextBox();
             panel1 = new Panel();
-            panel2 = new Panel();
             label_login = new Label();
+            txtChat = new RichTextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
@@ -62,7 +62,6 @@
             btn_exit.TabIndex = 14;
             btn_exit.Text = "Exit";
             btn_exit.UseVisualStyleBackColor = false;
-            btn_exit.Click += btn_exit_Click;
             // 
             // btn_back
             // 
@@ -76,7 +75,6 @@
             btn_back.TabIndex = 15;
             btn_back.Text = "Logout";
             btn_back.UseVisualStyleBackColor = false;
-            btn_back.Click += btn_back_Click;
             // 
             // btn_send
             // 
@@ -90,15 +88,16 @@
             btn_send.TabIndex = 16;
             btn_send.Text = "Send";
             btn_send.UseVisualStyleBackColor = false;
+            btn_send.Click += btn_send_Click;
             // 
-            // textBox1
+            // txtMensagem
             // 
-            textBox1.ForeColor = Color.Black;
-            textBox1.Location = new Point(301, 404);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(364, 34);
-            textBox1.TabIndex = 17;
+            txtMensagem.ForeColor = Color.Black;
+            txtMensagem.Location = new Point(301, 404);
+            txtMensagem.Multiline = true;
+            txtMensagem.Name = "txtMensagem";
+            txtMensagem.Size = new Size(364, 34);
+            txtMensagem.TabIndex = 17;
             // 
             // panel1
             // 
@@ -108,14 +107,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(370, 38);
             panel1.TabIndex = 18;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.WhiteSmoke;
-            panel2.Location = new Point(298, 12);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(493, 386);
-            panel2.TabIndex = 19;
             // 
             // label_login
             // 
@@ -128,15 +119,23 @@
             label_login.TabIndex = 20;
             label_login.Text = "Connected Users:";
             // 
+            // txtChat
+            // 
+            txtChat.Location = new Point(298, 16);
+            txtChat.Name = "txtChat";
+            txtChat.Size = new Size(490, 380);
+            txtChat.TabIndex = 21;
+            txtChat.Text = "";
+            // 
             // Form2
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtChat);
             Controls.Add(label_login);
-            Controls.Add(panel2);
-            Controls.Add(textBox1);
+            Controls.Add(txtMensagem);
             Controls.Add(btn_send);
             Controls.Add(btn_back);
             Controls.Add(btn_exit);
@@ -157,9 +156,9 @@
         private Button btn_back;
         private ColorDialog colorDialog1;
         private Button btn_send;
-        private TextBox textBox1;
+        private TextBox txtMensagem;
         private Panel panel1;
-        private Panel panel2;
         private Label label_login;
+        private RichTextBox txtChat;
     }
 }
