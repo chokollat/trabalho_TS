@@ -52,19 +52,19 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
             }
         }
 
-        // Gera hash usando Rfc2898 com salt e iterações
+        // Gera hash 
         private static byte[] GenerateSaltedHash(string plainText, byte[] salt)
         {
             using (var rfc2898 = new Rfc2898DeriveBytes(plainText, salt, NUMBER_OF_ITERATIONS))
             {
-                return rfc2898.GetBytes(32); // tamanho do hash
+                return rfc2898.GetBytes(32); // tamanho hash
             }
         }
 
         // Função para registrar usuário na base
 
 
-        // Evento do botão Registrar
+        
 
 
         private void btnRegister_Click_1(object sender, EventArgs e)
@@ -79,9 +79,11 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
 
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
+            // Lê o conteúdo das caixas de texto
             string username = txtUsername.Text.Trim();
             string password = txtPassword.Text;
 
+            // Verifica se os campos estão preenchidos
             if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Preenche todos os campos!");
@@ -90,25 +92,38 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
 
             try
             {
+                // Cria uma ligação Tcp com o servidor
                 TcpClient client = new TcpClient("127.0.0.1", 10000);
-                NetworkStream networkStream = client.GetStream();
-                ProtocolSI protocolSI = new ProtocolSI();
+                NetworkStream networkStream = client.GetStream(); // Comunicação com o servidor
+                ProtocolSI protocolSI = new ProtocolSI(); 
 
+                
                 string dados = username + "+" + password;
-                string dadosCifrados = AESCrypto.Encrypt(dados); // Usa a classe AESCrypto.cs
 
+                // Cifra os dados usando AES 
+                string dadosCifrados = AESCrypto.Encrypt(dados); 
+    
                 byte[] loginPacket = protocolSI.Make(ProtocolSICmdType.USER_OPTION_2, dadosCifrados);
+
+                // Envia o pacote para o servidor
                 networkStream.Write(loginPacket, 0, loginPacket.Length);
 
+                // Lê a resposta do servidor
                 int bytesRead = networkStream.Read(protocolSI.Buffer, 0, protocolSI.Buffer.Length);
+
                 ProtocolSICmdType resposta = protocolSI.GetCmdType();
+
+                // Lê o conteúdo da resposta
                 string respostaServidor = protocolSI.GetStringFromData();
 
+                // Se a resposta indicar login bem-sucedido
                 if (resposta == ProtocolSICmdType.DATA && respostaServidor == "logado")
                 {
                     MessageBox.Show("Login bem-sucedido!");
+
                     Form2 chatForm = new Form2(client, networkStream, username);
                     chatForm.Show();
+
                     this.Hide();
                 }
                 else
@@ -119,6 +134,7 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
             }
             catch (Exception ex)
             {
+                // Em caso de erro mostra mensagem
                 MessageBox.Show("Erro ao comunicar com o servidor: " + ex.Message);
             }
         }
