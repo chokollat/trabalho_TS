@@ -47,6 +47,7 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
                     if (cmd == ProtocolSICmdType.DATA)
                     {
                         string mensagem = protocolSI.GetStringFromData();
+
                         Invoke(new Action(() => txtChat.AppendText(mensagem + Environment.NewLine)));
                     }
                     else if (cmd == ProtocolSICmdType.EOT)
@@ -73,10 +74,20 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
             string mensagem = txtMensagem.Text.Trim();
             if (!string.IsNullOrEmpty(mensagem))
             {
+                string mensagemCifrada = AESCrypto.Encrypt(mensagem);
+
                 byte[] packet = protocolSI.Make(ProtocolSICmdType.DATA, mensagem);
                 networkStream.Write(packet, 0, packet.Length);
                 txtMensagem.Clear();
+
+                txtChat.AppendText("Tu: " + mensagem + Environment.NewLine);
             }
+        }
+
+        private void btn_exit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
         }
     }
 

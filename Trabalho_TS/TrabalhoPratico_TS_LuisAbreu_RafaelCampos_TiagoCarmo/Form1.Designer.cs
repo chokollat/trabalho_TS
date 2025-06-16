@@ -193,6 +193,7 @@
             btn_exit.TabIndex = 13;
             btn_exit.Text = "Exit";
             btn_exit.UseVisualStyleBackColor = false;
+            btn_exit.Click += btn_exit_Click;
             // 
             // btnRegister
             // 
@@ -228,7 +229,7 @@
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             ForeColor = Color.White;
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "TapSend";
             Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

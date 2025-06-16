@@ -62,6 +62,7 @@
             btn_exit.TabIndex = 14;
             btn_exit.Text = "Exit";
             btn_exit.UseVisualStyleBackColor = false;
+            btn_exit.Click += btn_exit_Click;
             // 
             // btn_back
             // 
@@ -141,7 +142,7 @@
             Controls.Add(btn_exit);
             Controls.Add(pictureBox2);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
+            FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "Form2";
             Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
