@@ -46,7 +46,8 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
 
                     if (cmd == ProtocolSICmdType.DATA)
                     {
-                        string mensagem = protocolSI.GetStringFromData();
+                        string mensagemCifrada = protocolSI.GetStringFromData();
+                        string mensagem = AESCrypto.Decrypt(mensagemCifrada);
 
                         Invoke(new Action(() => txtChat.AppendText(mensagem + Environment.NewLine)));
                     }
@@ -76,7 +77,7 @@ namespace TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo
             {
                 string mensagemCifrada = AESCrypto.Encrypt(mensagem);
 
-                byte[] packet = protocolSI.Make(ProtocolSICmdType.DATA, mensagem);
+                byte[] packet = protocolSI.Make(ProtocolSICmdType.DATA, mensagemCifrada);
                 networkStream.Write(packet, 0, packet.Length);
                 txtMensagem.Clear();
 

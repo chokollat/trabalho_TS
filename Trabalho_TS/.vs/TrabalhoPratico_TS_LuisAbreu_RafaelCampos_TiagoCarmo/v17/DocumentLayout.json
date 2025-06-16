@@ -3,11 +3,23 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|c:\\users\\user\\documents\\git\\trabalho_ts\\trabalho_ts\\trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\aescrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|solutionrelative:trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\aescrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|c:\\users\\user\\documents\\git\\trabalho_ts\\trabalho_ts\\trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|solutionrelative:trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8AD806D9-DF28-49F3-8537-9FC7B690ED5C}|Consola_Server\\Consola_Server.csproj|c:\\users\\user\\documents\\git\\trabalho_ts\\trabalho_ts\\consola_server\\aescrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8AD806D9-DF28-49F3-8537-9FC7B690ED5C}|Consola_Server\\Consola_Server.csproj|solutionrelative:consola_server\\aescrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|c:\\users\\user\\documents\\git\\trabalho_ts\\trabalho_ts\\trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|solutionrelative:trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|c:\\users\\user\\documents\\git\\trabalho_ts\\trabalho_ts\\trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|solutionrelative:trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\form2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -34,18 +46,6 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_USER_DOCUMENTS_GIT_TRABALHO_TS_TRABALHO_TS_TRABALHOPRATICO_TS_LUISABREU_RAFAELCAMPOS_TIAGOCARMO_DB_DBUSER.MDF/True/SqlTable/dbo.Users.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|c:\\users\\user\\documents\\git\\trabalho_ts\\trabalho_ts\\trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|solutionrelative:trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|c:\\users\\user\\documents\\git\\trabalho_ts\\trabalho_ts\\trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\aescrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|solutionrelative:trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\aescrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8AD806D9-DF28-49F3-8537-9FC7B690ED5C}|Consola_Server\\Consola_Server.csproj|c:\\users\\user\\documents\\git\\trabalho_ts\\trabalho_ts\\consola_server\\aescrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8AD806D9-DF28-49F3-8537-9FC7B690ED5C}|Consola_Server\\Consola_Server.csproj|solutionrelative:consola_server\\aescrypto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|c:\\users\\user\\documents\\git\\trabalho_ts\\trabalho_ts\\trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{40A28F20-58B0-4CCE-AF25-A3ED335FEF7A}|TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj|solutionrelative:trabalhopratico_ts_luisabreu_rafaelcampos_tiagocarmo\\form2.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -60,7 +60,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 12,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -72,7 +72,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 7,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form1.cs",
               "RelativeDocumentMoniker": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form1.cs",
@@ -85,19 +85,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form2.cs [Projeto]",
+              "DocumentIndex": 4,
+              "Title": "Form2.cs [Design]",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.cs",
               "RelativeDocumentMoniker": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.cs",
-              "ToolTip": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.cs [Projeto]",
-              "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.cs [Projeto]",
+              "ToolTip": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.cs [Design]",
+              "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-16T16:27:26.228Z",
-              "EditorCaption": " [Projeto]"
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "dbo.Users.sql",
               "DocumentMoniker": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_USER_DOCUMENTS_GIT_TRABALHO_TS_TRABALHO_TS_TRABALHOPRATICO_TS_LUISABREU_RAFAELCAMPOS_TIAGOCARMO_DB_DBUSER.MDF/True/SqlTable/dbo.Users.sql",
               "ToolTip": "ViewDataWindow_MSSQL__/_LocalDB__MSSQLLocalDB/C__USERS_USER_DOCUMENTS_GIT_TRABALHO_TS_TRABALHO_TS_TRABALHOPRATICO_TS_LUISABREU_RAFAELCAMPOS_TIAGOCARMO_DB_DBUSER.MDF/True/SqlTable/dbo.Users.sql",
@@ -106,7 +106,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj",
               "RelativeDocumentMoniker": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj",
@@ -114,12 +114,11 @@
               "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-16T16:09:28.995Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-16T16:09:28.995Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "AESCrypto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\Consola_Server\\AESCrypto.cs",
               "RelativeDocumentMoniker": "Consola_Server\\AESCrypto.cs",
@@ -127,19 +126,21 @@
               "RelativeToolTip": "Consola_Server\\AESCrypto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T16:08:48.513Z"
+              "WhenOpened": "2025-06-16T16:08:48.513Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "AESCrypto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\AESCrypto.cs",
               "RelativeDocumentMoniker": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\AESCrypto.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\AESCrypto.cs",
               "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\AESCrypto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T16:07:30.429Z"
+              "WhenOpened": "2025-06-16T16:07:30.429Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -151,12 +152,11 @@
               "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.Designer.cs",
               "ViewState": "AgIAACkAAAAAAAAAAAAYwD8AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T15:57:35.814Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-16T15:57:35.814Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Form1.Designer.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form1.Designer.cs",
@@ -164,8 +164,7 @@
               "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form1.Designer.cs",
               "ViewState": "AgIAAFAAAAAAAAAAAAAYwGcAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T15:57:26.719Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-16T15:57:26.719Z"
             },
             {
               "$type": "Document",
@@ -182,7 +181,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Program.cs",
               "RelativeDocumentMoniker": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Program.cs",
@@ -190,36 +189,36 @@
               "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-16T15:49:13.136Z"
+              "WhenOpened": "2025-06-16T15:49:13.136Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Form2.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.cs",
               "RelativeDocumentMoniker": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.cs",
               "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form2.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAAvAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-16T15:39:44.557Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "Form1.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form1.cs",
               "RelativeDocumentMoniker": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form1.cs",
               "ToolTip": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form1.cs [Projeto]",
               "RelativeToolTip": "TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo\\Form1.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T23:47:18.814Z",
-              "EditorCaption": " [Projeto]"
+              "WhenOpened": "2025-06-15T23:47:18.814Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\Documents\\GIT\\trabalho_TS\\Trabalho_TS\\Consola_Server\\Program.cs",
               "RelativeDocumentMoniker": "Consola_Server\\Program.cs",
@@ -227,8 +226,7 @@
               "RelativeToolTip": "Consola_Server\\Program.cs",
               "ViewState": "AgIAAFIBAAAAAAAAAAAQwHMBAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-15T23:41:15.174Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-15T23:41:15.174Z"
             }
           ]
         }

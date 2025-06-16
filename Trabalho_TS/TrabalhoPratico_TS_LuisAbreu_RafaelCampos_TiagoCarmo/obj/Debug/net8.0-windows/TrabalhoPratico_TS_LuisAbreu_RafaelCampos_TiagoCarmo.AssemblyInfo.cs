@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ff83a7d600a9b3cb1bc3954c465473c8e698d9db")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8c6c87328c89607f1c04d88a82e998ad32ecf562")]
 [assembly: System.Reflection.AssemblyProductAttribute("TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TrabalhoPratico_TS_LuisAbreu_RafaelCampos_TiagoCarmo")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
